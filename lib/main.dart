@@ -10,13 +10,19 @@ class Hope extends StatelessWidget{
     final audioPlayer = AudioCache();
     audioPlayer.play('sound$nota.mp3');
   }
-  Expanded crearTecla({Color color, int nota}){
+  Expanded crearTecla({Color color, int nota, String text}){
     return Expanded(
       child:FlatButton(
         onPressed: (){
           teclasSound(nota);
-        },
+          },
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
         color: color,
+        splashColor: Colors.blueGrey,
+        shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0),side: BorderSide(color: Colors.white)),
       ),
     );
   }
@@ -33,16 +39,16 @@ class Hope extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              crearTecla(nota: 1, color: Colors.redAccent),
-              crearTecla(nota: 2, color: Colors.lightGreen),
-              crearTecla(nota: 3, color: Colors.lightBlue),
-              crearTecla(nota: 4, color: Colors.red),
-              crearTecla(nota: 5, color: Colors.yellow),
-              crearTecla(nota: 6, color: Colors.blue[900]),
-              crearTecla(nota: 7, color: Colors.lightGreen),
-              crearTecla(nota: 8, color: Colors.blue),
-              crearTecla(nota: 9, color: Colors.lightGreenAccent),
-              crearTecla(nota: 10, color: Colors.yellow[700])
+              crearTecla(nota: 1, color: Colors.redAccent, text: "Lightaber On"),
+              crearTecla(nota: 2, color: Colors.lightGreen, text: "Lightsaber Off"),
+              crearTecla(nota: 3, color: Colors.lightBlue, text: "Moving saber"),
+              crearTecla(nota: 4, color: Colors.red, text: "Deflecting"),
+              crearTecla(nota: 5, color: Colors.yellow, text: "Fight"),
+              crearTecla(nota: 6, color: Colors.blue[900], text: "Fight 2"),
+              crearTecla(nota: 7, color: Colors.lightGreen, text: "Wielding"),
+              crearTecla(nota: 8, color: Colors.blue, text: "Lightsabers clash"),
+              crearTecla(nota: 9, color: Colors.lightGreenAccent, text: "Fast Move"),
+              crearTecla(nota: 10, color: Colors.yellow[700], text: "Holding")
             ],
           ),
         ),
